@@ -25,7 +25,12 @@ function Money() {
 
   return (
     <div className="Money">
-      <h1>Money</h1>
+      <nav className="navbar navbar-light bg-light">
+        <div className="container">
+          <h1 className="navbar-brand">Money</h1>
+        </div>
+      </nav>
+
       {JSON.stringify(data)}
       <pre>{JSON.stringify(data2)}</pre>
       <button onClick={saveNew}>Save</button>

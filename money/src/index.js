@@ -4,6 +4,8 @@ import { createRoot } from "react-dom/client";
 import Money from "./Money";
 import reportWebVitals from "./reportWebVitals";
 
+import "bootstrap/dist/css/bootstrap.css";
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 root.render(
