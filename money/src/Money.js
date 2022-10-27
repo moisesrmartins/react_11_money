@@ -31,6 +31,21 @@ function Money() {
         </div>
       </nav>
 
+      <select>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+      </select>
+      <select>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+      </select>
+
+      <button>Add Month</button>
+
       {JSON.stringify(data)}
       <pre>{JSON.stringify(data2)}</pre>
       <button onClick={saveNew}>Save</button>
