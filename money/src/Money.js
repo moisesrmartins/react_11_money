@@ -1,27 +1,16 @@
 import React from "react";
 import useGet from "./useGet";
-import usePost from "./usePost";
-import useRemove from "./useRemove";
 
-const url = "https://money-7d9fd-default-rtdb.firebaseio.com/delete.json";
+const url = "https://money-7d9fd-default-rtdb.firebaseio.com/months.json";
 
 function Money() {
   const data = useGet(url);
-  const data2 = useGet("https://httpbin.org/ip");
-  const [postData, post] = usePost(url);
-  const [removeData, remove] = useRemove(url);
 
-  const saveNew = () => {
-    post({ chave: "value", key: "value1", valor: 10 });
-  };
-
-  const deleteNew = () => {
-    remove("https://money-7d9fd-default-rtdb.firebaseio.com/delete/.json");
-  };
-
+  /*
   if (data.loading) {
     return <p>Loading...</p>;
   }
+  */
 
   return (
     <div className="Money">
@@ -31,11 +20,10 @@ function Money() {
         </div>
       </nav>
 
+      <h2>Add Month</h2>
       <select>
         <option value="2019">2019</option>
         <option value="2020">2020</option>
-        <option value="2021">2021</option>
-        <option value="2022">2022</option>
       </select>
       <select>
         <option value="01">01</option>
@@ -47,11 +35,6 @@ function Money() {
       <button>Add Month</button>
 
       {JSON.stringify(data)}
-      <pre>{JSON.stringify(data2)}</pre>
-      <button onClick={saveNew}>Save</button>
-      <pre>{JSON.stringify(postData)}</pre>
-      <button onClick={deleteNew}>Delete</button>
-      <pre>{JSON.stringify(removeData)}</pre>
     </div>
   );
 }
