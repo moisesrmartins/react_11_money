@@ -38,6 +38,7 @@ const Year = () => {
       </table>
     );
   }
+  return null;
 };
 
 export default Year;
