@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useGet from "./useGet";
 
 const url = "https://money-7d9fd-default-rtdb.firebaseio.com/year.json";
@@ -26,7 +27,9 @@ const Year = () => {
           {Object.keys(data.data).map((year) => {
             return (
               <tr key={year}>
-                <td>{year}</td>
+                <td>
+                  <Link to={`/moviment/${year}`}>{year}</Link>
+                </td>
                 <td>{data.data[year].input}</td>
                 <td>{data.data[year].input_forecast}</td>
                 <td>{data.data[year].output}</td>
