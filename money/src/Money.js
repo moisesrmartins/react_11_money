@@ -13,12 +13,17 @@ const Home = () => {
   );
 };
 
+const Moviment = () => {
+  return <h1>Money</h1>;
+};
+
 function Money() {
   return (
     <div className="Money">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/moviment/:data" element={<Moviment />} />
       </Routes>
     </div>
   );
