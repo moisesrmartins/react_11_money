@@ -1,7 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./elements/Header";
-import Home from "./pages/Home";
+import Year from "./Year";
+import AddYear from "./AddYear";
+
+const Home = () => {
+  return (
+    <div className="container">
+      <AddYear />
+      <Year />
+    </div>
+  );
+};
 
 const Moviment = () => {
   return <h1>Money</h1>;
