@@ -1,6 +1,6 @@
 import React from "react";
-import Year from "../Year";
-import AddYear from "../AddYear";
+import Year from "./home/Year";
+import AddYear from "./home/AddYear";
 
 const Home = () => {
   return (

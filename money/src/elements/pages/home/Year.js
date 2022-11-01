@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useGet from "./useGet";
+import useGet from "../../use/useGet";
 
 const url = "https://money-7d9fd-default-rtdb.firebaseio.com/year.json";
 
