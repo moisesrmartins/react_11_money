@@ -15,13 +15,12 @@ const Home = () => {
 
 function Money() {
   return (
-    <Routes>
-      <div className="Money">
-        <Header />
+    <div className="Money">
+      <Header />
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Home />
-      </div>
-    </Routes>
+      </Routes>
+    </div>
   );
 }
 export default Money;

@@ -1,6 +1,7 @@
 import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import Money from "./Money";
 import reportWebVitals from "./reportWebVitals";
 
@@ -10,7 +11,9 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 root.render(
   <StrictMode>
-    <Money />
+    <BrowserRouter>
+      <Money />
+    </BrowserRouter>
   </StrictMode>
 );
 
