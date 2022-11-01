@@ -2,10 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./elements/Header";
 import Home from "./pages/Home";
-
-const Moviment = () => {
-  return <h1>Money</h1>;
-};
+import Moviment from "./pages/Moviment";
 
 function Money() {
   return (
