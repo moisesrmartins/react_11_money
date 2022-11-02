@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useGet from "../../use/useGet";
+import rest from "../../use/rest";
 
-const url = "https://money-7d9fd-default-rtdb.firebaseio.com/year.json";
+const baseURL = "https://money-7d9fd-default-rtdb.firebaseio.com/";
+const { useGet } = rest(baseURL);
 
 const Year = () => {
-  const data = useGet(url);
+  const data = useGet("year");
 
   if (data.loading) {
     return <span>Loading...</span>;
