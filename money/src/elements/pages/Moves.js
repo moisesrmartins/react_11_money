@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import rest from "../use/rest";
 
 const baseURL = "https://money-7d9fd-default-rtdb.firebaseio.com/";
@@ -14,7 +15,11 @@ const Moves = () => {
   return (
     <div className="container">
       <h1>Moves</h1>
-      <h2>Moviment</h2>
+      <h2>
+        <Link to={"/moviment/:data"} style={{ textDecoration: "none" }}>
+          Moviment
+        </Link>
+      </h2>
     </div>
   );
 };
