@@ -4,19 +4,25 @@ import { useParams, Link } from "react-router-dom";
 
 const baseURL = "https://money-7d9fd-default-rtdb.firebaseio.com/";
 const { useGet } = rest(baseURL);
+
 const Moviment = ({ match }) => {
   let { id } = useParams(match);
+
   const data = useGet("moviment", id);
+
   if (data.loading) {
     return <span>Loading...</span>;
   }
+
   if (data.data) {
     return (
       <div className="container">
         <h1>Moviment</h1>
+
         <h2>
           <Link to={"/"}>Money</Link>
         </h2>
+
         <table className="table">
           <thead>
             <tr>
@@ -26,6 +32,7 @@ const Moviment = ({ match }) => {
               <th>Wage Three</th>
             </tr>
           </thead>
+
           <tbody>
             {Object.keys(data.data).map((moviment) => {
               return (
@@ -42,6 +49,8 @@ const Moviment = ({ match }) => {
       </div>
     );
   }
+
   return null;
 };
+
 export default Moviment;
