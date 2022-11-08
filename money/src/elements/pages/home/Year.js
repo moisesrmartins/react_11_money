@@ -29,7 +29,12 @@ const Year = () => {
             return (
               <tr key={year}>
                 <td>
-                  <Link to={`/moviment/${year}`}>{year}</Link>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/moviment/${year}`}
+                  >
+                    {year}
+                  </Link>
                 </td>
                 <td>{data.data[year].input}</td>
                 <td>{data.data[year].input_forecast}</td>
