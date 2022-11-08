@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./elements/use/Header";
 import Home from "./elements/pages/Home";
 import Moviment from "./elements/pages/Moviment";
+import Moves from "./elements/pages/Moves";
 
 function Money() {
   return (
@@ -11,6 +12,7 @@ function Money() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/moviment/:data" element={<Moviment />} />
+        <Route path="/moves" element={<Moves />} />
       </Routes>
     </div>
   );
