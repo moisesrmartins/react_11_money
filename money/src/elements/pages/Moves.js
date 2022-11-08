@@ -10,6 +10,13 @@ const Moves = () => {
   if (data.loading) {
     return <span>Loading...</span>;
   }
+
+  return (
+    <div className="container">
+      <h1>Moves</h1>
+      <h2>Moviment</h2>
+    </div>
+  );
 };
 
 export default Moves;
