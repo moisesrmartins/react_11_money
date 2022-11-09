@@ -21,6 +21,17 @@ const Id1 = () => {
             Moves
           </Link>
         </h2>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Periods</th>
+              <th>Value 1</th>
+              <th>Value 2</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+        </table>
       </div>
     );
   }
