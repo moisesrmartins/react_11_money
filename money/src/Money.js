@@ -4,6 +4,7 @@ import Header from "./elements/use/Header";
 import Home from "./elements/pages/Home";
 import Moviment from "./elements/pages/Moviment";
 import Moves from "./elements/pages/Moves";
+import Id1 from "./elements/pages/Id1";
 
 function Money() {
   return (
@@ -13,6 +14,7 @@ function Money() {
         <Route path="/" element={<Home />} />
         <Route path="/moviment/:data" element={<Moviment />} />
         <Route path="/moves" element={<Moves />} />
+        <Route path="/id1" element={<Id1 />} />
       </Routes>
     </div>
   );
