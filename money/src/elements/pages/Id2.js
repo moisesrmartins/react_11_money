@@ -31,6 +31,22 @@ const Id2 = () => {
               <th>Total</th>
             </tr>
           </thead>
+
+          <tbody>
+            {Object.keys(data.data).map((id2) => {
+              return (
+                <tr key={id2}>
+                  <td to={`/id2/${id2}`}>
+                    <b>{id2}</b>
+                  </td>
+
+                  <td>{data.data[id2].value1}</td>
+                  <td>{data.data[id2].value2}</td>
+                  <td>{data.data[id2].total}</td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </div>
     );
