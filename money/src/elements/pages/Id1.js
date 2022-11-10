@@ -7,6 +7,7 @@ const { useGet } = rest(baseURL);
 
 const Id1 = () => {
   const data = useGet("id1");
+  const data2 = useGet("total");
 
   if (data.loading) {
     return <span>Loading...</span>;
@@ -43,6 +44,33 @@ const Id1 = () => {
                   <td>{data.data[id1].value1}</td>
                   <td>{data.data[id1].value2}</td>
                   <td>{data.data[id1].total}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Ending</th>
+              <th>Value 1</th>
+              <th>Value 2</th>
+              <th>Grand Total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {Object.keys(data2.data).map((total) => {
+              return (
+                <tr key={total}>
+                  <td to={`/total/${total}`}>
+                    <b>{total}</b>
+                  </td>
+
+                  <td>{data2.data[total].grandvalue1}</td>
+                  <td>{data2.data[total].grandvalue2}</td>
+                  <td>{data2.data[total].grandtotal}</td>
                 </tr>
               );
             })}
