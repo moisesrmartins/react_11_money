@@ -60,7 +60,7 @@ const Id1 = () => {
             </tr>
           </thead>
 
-          <tbody>
+          <tfoot>
             {Object.keys(data2.data).map((total) => {
               return (
                 <tr key={total}>
@@ -74,7 +74,7 @@ const Id1 = () => {
                 </tr>
               );
             })}
-          </tbody>
+          </tfoot>
         </table>
       </div>
     );
