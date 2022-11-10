@@ -25,7 +25,6 @@ const Moves = () => {
           <thead>
             <tr>
               <th>ID 1</th>
-              <th>ID 2</th>
             </tr>
           </thead>
           <tbody>
@@ -37,6 +36,20 @@ const Moves = () => {
                       {data.data[moves].id_1}
                     </Link>
                   </td>
+                </tr>
+              );
+            })}
+          </tbody>
+
+          <thead>
+            <tr>
+              <th>ID 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(data.data).map((moves) => {
+              return (
+                <tr key={moves}>
                   <td>
                     <Link style={{ textDecoration: "none" }} to={"/id2"}>
                       {data.data[moves].id_2}
