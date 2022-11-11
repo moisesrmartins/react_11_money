@@ -6,7 +6,8 @@ const baseURL = "https://money-7d9fd-default-rtdb.firebaseio.com/";
 const { useGet } = rest(baseURL);
 
 const Moves = () => {
-  const data = useGet("moves");
+  const data = useGet("move1");
+  const data2 = useGet("move2");
 
   if (data.loading) {
     return <span>Loading...</span>;
@@ -16,24 +17,29 @@ const Moves = () => {
     return (
       <div className="container">
         <h1>Moves</h1>
+
         <h2>
           <Link to={"/moviment/:data"} style={{ textDecoration: "none" }}>
             Moviment
           </Link>
         </h2>
+
         <table className="table">
           <thead>
             <tr>
-              <th>ID 1</th>
+              <th>IDs</th>
+              <th>Moviments</th>
             </tr>
           </thead>
+
           <tbody>
-            {Object.keys(data.data).map((moves) => {
+            {Object.keys(data.data).map((move1) => {
               return (
-                <tr key={moves}>
+                <tr key={move1}>
+                  <td>{move1}</td>
                   <td>
                     <Link style={{ textDecoration: "none" }} to={"/id1"}>
-                      {data.data[moves].id_1}
+                      {data.data[move1].id1}
                     </Link>
                   </td>
                 </tr>
@@ -41,18 +47,14 @@ const Moves = () => {
             })}
           </tbody>
 
-          <thead>
-            <tr>
-              <th>ID 2</th>
-            </tr>
-          </thead>
           <tbody>
-            {Object.keys(data.data).map((moves) => {
+            {Object.keys(data2.data).map((move2) => {
               return (
-                <tr key={moves}>
+                <tr key={move2}>
+                  <td>{move2}</td>
                   <td>
                     <Link style={{ textDecoration: "none" }} to={"/id2"}>
-                      {data.data[moves].id_2}
+                      {data2.data[move2].id2}
                     </Link>
                   </td>
                 </tr>
@@ -63,6 +65,7 @@ const Moves = () => {
       </div>
     );
   }
+
   return null;
 };
 
