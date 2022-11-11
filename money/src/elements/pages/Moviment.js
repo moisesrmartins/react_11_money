@@ -7,10 +7,10 @@ const baseURL = "https://money-7d9fd-default-rtdb.firebaseio.com/";
 const { useGet, usePost } = rest(baseURL);
 
 const Moviment = ({ match }) => {
-  let { id } = useParams(match);
+  let { data2 } = useParams(match);
 
-  const data = useGet("moviment", id);
-  const [postData, save] = usePost("moviment");
+  const data = useGet("moviment", data2);
+  const [postData, save] = usePost("moviment", data2);
 
   const [year, setYear] = useState(0.0);
   const [moviment, setMoviment] = useState("");
@@ -35,6 +35,11 @@ const Moviment = ({ match }) => {
       moviment,
       value,
     });
+
+    setValue(0);
+    setMoviment("");
+    setYear(0);
+    data.refetch();
   };
 
   if (data.loading) {
@@ -74,7 +79,7 @@ const Moviment = ({ match }) => {
 
                   <td>{data.data[code].year}</td>
                   <td>{data.data[code].moviment}</td>
-                  <td>{data.data[code].value}</td>
+                  <td>USD {data.data[code].value}</td>
                 </tr>
               );
             })}

@@ -23,15 +23,17 @@ const reducer = (state, action) => {
 const rest = (baseURL) => {
   const useGet = (resource) => {
     const [data, dispatch] = useReducer(reducer, { INITIAL_STATE });
+    const load = async () => {
+      dispatch({ type: "REQUEST" });
+      const res = await axios.get(baseURL + resource + ".json");
+      dispatch({ type: "SUCCESS", data: res.data });
+    };
 
     useEffect(() => {
-      dispatch({ type: "REQUEST" });
-      axios.get(baseURL + resource + ".json").then((res) => {
-        dispatch({ type: "SUCCESS", data: res.data });
-      });
+      load();
     }, [resource]);
 
-    return data;
+    return { ...data, refetch: load };
   };
 
   const usePost = (resource) => {
