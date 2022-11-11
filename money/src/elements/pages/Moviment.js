@@ -17,29 +17,35 @@ const Moviment = ({ match }) => {
   const [value, setValue] = useState(0.0);
 
   const onChangeYear = (evt) => {
-    setYear(parseFloat(evt.target.value));
-    console.log(parseFloat(evt.target.value));
+    setYear(evt.target.value);
+    console.log(evt.target.value);
   };
   const onChangeMoviment = (evt) => {
     setMoviment(evt.target.value);
     console.log(evt.target.value);
   };
   const onChangeValue = (evt) => {
-    setValue(parseFloat(evt.target.value));
-    console.log(parseFloat(evt.target.value));
+    setValue(evt.target.value);
+    console.log(evt.target.value);
   };
 
   const saveCode = async () => {
-    await save({
-      year,
-      moviment,
-      value,
-    });
+    if (
+      !isNaN(year, value) &&
+      value.search(/^[-]?|d+(|.)?|d+?$/) >= null &&
+      year.search(/^[-]?|d+(|.)?|d+?$/) >= null
+    ) {
+      await save({
+        year: parseFloat(year),
+        moviment,
+        value: parseFloat(value),
+      });
 
-    setValue(0);
-    setMoviment("");
-    setYear(0);
-    data.refetch();
+      setValue(0);
+      setMoviment("");
+      setYear(0);
+      data.refetch();
+    }
   };
 
   if (data.loading) {
