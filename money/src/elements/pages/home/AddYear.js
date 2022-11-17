@@ -1,6 +1,14 @@
 import React from "react";
 
+const minYear = 2019;
+const maxYear = 2022;
+
 const AddYear = () => {
+  const years = [];
+  for (let i = minYear; i <= maxYear; i++) {
+    years.push(i);
+  }
+
   return (
     <div>
       <h2>Add Year</h2>
