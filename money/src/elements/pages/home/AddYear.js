@@ -1,15 +1,21 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 
 const minYear = 2019;
 const maxYear = 2022;
 
 const AddYear = () => {
   const refYear = useRef();
+  const [redir, setRedir] = useState("");
 
   const years = [];
   for (let i = minYear; i <= maxYear; i++) {
     years.push(i);
   }
+
+  const seeYear = () => {
+    setRedir(refYear.current.value);
+    console.log("seeYear", refYear.current.value);
+  };
 
   return (
     <div>
@@ -23,7 +29,7 @@ const AddYear = () => {
         ))}
       </select>
 
-      <button>Add Year</button>
+      <button onClick={seeYear}>Add Year</button>
     </div>
   );
 };
