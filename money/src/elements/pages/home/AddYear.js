@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Navigate } from "react-router-dom";
 
 const minYear = 2019;
 const maxYear = 2022;
@@ -16,6 +17,10 @@ const AddYear = () => {
     setRedir(refYear.current.value);
     console.log("seeYear", refYear.current.value);
   };
+
+  if (redir !== "") {
+    return <Navigate to={"/moviment/:data" + redir} />;
+  }
 
   return (
     <div>
