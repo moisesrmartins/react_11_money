@@ -5,7 +5,7 @@ admin.initializeApp();
 
 exports.soma = functions.database
   .ref("/moviment/{day}")
-  .onWrie(async (change, context) => {
+  .onWrite(async (change, context) => {
     const yearsRef = admin.database().ref("/year/" + context.params.day);
     const movimentRef = change.after.ref;
     const movimentSS = await movimentRef.once("value");
